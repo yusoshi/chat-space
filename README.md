@@ -12,7 +12,7 @@
 ## groups table
 |columns|type|option|
 |:-:|:-:|:-:|
-|name|string|NOT NULL|
+|name|string|NOT NULL, UNIQUE|
 
 
 ## belongs_of_users table
