@@ -26,7 +26,7 @@
 |columns|type|option|index|
 |:-:|:-:|:-:|:-:|
 |body|text|-|-|
-|images|text|-|-|
+|images|string|-|-|
 |group_id|references|外部キー制約|◯|
 |user_id|references|外部キー制約|◯|
 
