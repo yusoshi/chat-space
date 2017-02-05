@@ -15,7 +15,7 @@
 |name|string|NOT NULL, UNIQUE|
 
 
-## belongs_of_users table
+## groups_users table
 |columns|type|option|
 |:-:|:-:|:-:|
 |group_id|references|外部キー制約|
