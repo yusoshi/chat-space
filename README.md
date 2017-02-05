@@ -1,24 +1,24 @@
 
-* Database setting
+# Database setting
 
 
 
 ## アソシエーション設定
 
-user
-  has_many :messages
-  has_many :groups_users
-  has_many :groups, through: :groups_users
+user  
+  has_many :messages  
+  has_many :groups_users  
+  has_many :groups, through: :groups_users  
 
-group
-  has_many :massages
-  has_many :groups_users
-  has_many: users, through: :groups_users
+group  
+  has_many :massages  
+  has_many :groups_users  
+  has_many: users, through: :groups_users  
 
 
-groups_users
-  belongs_to :user
-  belongs_to :group
+groups_users  
+  belongs_to :user  
+  belongs_to :group  
 
 
 ## messages table
