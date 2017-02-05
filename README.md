@@ -21,21 +21,14 @@
 
 
 
-## index設定
-    インデックス設定は  
-    add_index :user, :name  
-
-    add_index :users, [:name, :email, :password]  
-
-
 ## テーブル設計
 ### messages table
 |columns|type|option|index|
 |:-:|:-:|:-:|:-:|
 |body|text|-|-|
 |images|text|-|-|
-|group_id|references|外部キー制約|-|
-|user_id|references|外部キー制約|-|
+|group_id|references|外部キー制約|◯|
+|user_id|references|外部キー制約|◯|
 
 
 ### groups table
@@ -53,6 +46,6 @@
 ### groups_users table
 |columns|type|option|index|
 |:-:|:-:|:-:|:-:|
-|group_id|references|外部キー制約|-|
-|user_id|references|外部キー制約|-|
+|group_id|references|外部キー制約|◯|
+|user_id|references|外部キー制約|◯|
 
