@@ -20,7 +20,7 @@ Things you may want to cover:
 |group_id|integer|外部キー制約|
 |user_id|integer|外部キー制約|
 
-## userss table
+## users table
 |columns|type|option|
 |:-:|:-:|:-:|
 |name|string|NOT NULL|
