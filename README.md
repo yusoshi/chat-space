@@ -30,23 +30,29 @@
 
 ## テーブル設計
 ### messages table
-    |columns|type|option|index|
-    |:-:|:-:|:-:|:-:|
-    |body|text|-|-|
-    |images|text|-|-|
-    |group_id|references|外部キー制約|-|
-    |user_id|references|外部キー制約|-|
+|columns|type|option|index|
+|:-:|:-:|:-:|:-:|
+|body|text|-|-|
+|images|text|-|-|
+|group_id|references|外部キー制約|-|
+|user_id|references|外部キー制約|-|
 
 
 ### groups table
-    |columns|type|option|index|
-    |:-:|:-:|:-:|:-:|
-    |name|string|NOT NULL, UNIQUE|◯|
+|columns|type|option|index|
+|:-:|:-:|:-:|:-:|
+|name|string|NOT NULL, UNIQUE|◯|
+
+### users table
+|columns|type|option|index|
+|:-:|:-:|:-:|:-:|
+|name|string|NOT NULL, UNIQUE|◯|
+
 
 
 ### groups_users table
-    |columns|type|option|index|
-    |:-:|:-:|:-:|:-:|
-    |group_id|references|外部キー制約|-|
-    |user_id|references|外部キー制約|-|
+|columns|type|option|index|
+|:-:|:-:|:-:|:-:|
+|group_id|references|外部キー制約|-|
+|user_id|references|外部キー制約|-|
 
