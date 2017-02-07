@@ -46,4 +46,7 @@ group :development do
 end
 
 gem 'font_awesome'
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'haml'
 
