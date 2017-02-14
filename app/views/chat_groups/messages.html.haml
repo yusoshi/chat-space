@@ -1,0 +1,58 @@
+.wrapper
+  .chat
+    .chat-created-message
+      %p チャットグループが作成されました。
+    .chat-side
+      .chat-side__current-user-name
+        %p{class: "chat-side__current-user-name__showing-current-user-name"}yusoshi
+        .chat-side__current-user-name__icons
+          %a{class: "chat-side__current-user-name__icons__icon", href: "#"}
+            #{fa_icon "pencil-square-o"}
+          %a{class: "chat-side__current-user-name__icons__icon", href: "#"}
+            #{fa_icon  "cog"}
+      %ul{class: "chat-side__groups-and-latest-messages"}
+        %li{class: "chat-side__groups-and-latest-messages__one-section"}
+          %a{href: "#"}
+            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ１
+            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうも
+        %li{class: "chat-side__groups-and-latest-messages__one-section"}
+          %a{href: "#"}
+            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ２
+            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうもどうも
+        %li{class: "chat-side__groups-and-latest-messages__one-section"}
+          %a{href: "#"}
+            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ３
+            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうもどうもどうも
+
+    .chat-main
+      .chat-main__chat-header
+        .chat-main__chat-header__group-info
+          %p{class: "chat-main__chat-header__group-info__current-group"}Sampleグループ
+          %p{class: "chat-main__chat-header__group-info__current-group-members"}Members:yusoshi
+        %a{href: "#", class: "chat-main__chat-header__edit-btn btn"}Edit
+      .chat-main__messages-area
+        %ul{class: "chat-main__messages-area__message-section"}
+          %li{class: "chat-main__messages-area__message-section__message-list"}
+            .chat-main__messages-area__message-section__message-list__head
+              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
+              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
+            %p{class: "chat-main__messages-area__message-list__message"}test
+          %li{class: "chat-main__messages-area__message-section__message-list"}
+            .chat-main__messages-area__message-section__message-list__head
+              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
+              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
+            %p{class: "chat-main__messages-area__message-list__message"}test
+          %li{class: "chat-main__messages-area__message-section__message-list"}
+            .chat-main__messages-area__message-section__message-list__head
+              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
+              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
+            %p{class: "chat-main__messages-area__message-list__message"}test
+
+
+      .chat-main__footer
+        .chat-main__footer--clearfix
+          %form{class: "chat-main__footer__form"}
+            %textarea{class: "chat-main__footer__form__textarea", placeholder: "type a message", row: "1",}
+            #{fa_icon "image"}
+            %input{class: "chat-main__footer__form__sending-btn btn", type: "submit", value: "Send"}
+
