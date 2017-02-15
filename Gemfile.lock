@@ -177,11 +177,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   erb2haml
-<<<<<<< HEAD
   font-awesome-rails
   haml
-=======
->>>>>>> master
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
