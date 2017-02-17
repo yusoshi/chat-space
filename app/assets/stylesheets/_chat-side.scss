@@ -15,9 +15,10 @@
     box-sizing: border-box;
 
     &__showing-current-user-name {
-      position: absolute;
-      top: 65px;
       float: left;
+      position: relative;
+      top: 40px;
+      letter-spacing: 2px;
     }
 
     &__icons {
