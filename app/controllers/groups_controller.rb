@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def create
     Group.create(create_params)
+    redirect_to controller: :chat_groups, action: :messages
   end
 
   def edit
