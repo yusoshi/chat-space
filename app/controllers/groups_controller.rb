@@ -4,8 +4,15 @@ class GroupsController < ApplicationController
   end
 
   def create
+    Group.create(create_params)
   end
 
   def edit
+  end
+
+  private
+
+  def create_params
+    params.require(:group).permit(:name)
   end
 end
