@@ -4,8 +4,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(create_params)
-    redirect_to controller: :chat_groups, action: :messages
+    if Group.create(create_params)
+      redirect_to controller: :chat_groups, action: :messages
+    else
+      redirect_to action: :new, alert: 'グループの保存に失敗しました。'
+    end
   end
 
   def edit
