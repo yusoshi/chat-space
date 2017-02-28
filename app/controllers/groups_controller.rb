@@ -4,11 +4,10 @@ class GroupsController < ApplicationController
   end
 
   def create
-    group = Group.new(create_params)
-    if group.save
+    @group = Group.new(create_params)
+    if @group.save
       redirect_to controller: :chat_groups, action: :messages
     else
-      @group = Group.new
       flash.now[:alert] = "グループが保存できませんでした。"
       render action: :new
     end
