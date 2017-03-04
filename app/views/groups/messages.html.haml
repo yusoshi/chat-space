@@ -9,24 +9,17 @@
           = link_to edit_user_registration_path, class: "chat-side__current-user-name__icons__icon" do
             #{fa_icon  "cog"}
       %ul{class: "chat-side__groups-and-latest-messages"}
+      = current_user.groups.each do |group|
         %li{class: "chat-side__groups-and-latest-messages__one-section"}
-          %a{href: "#"}
-            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ１
-            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうも
-        %li{class: "chat-side__groups-and-latest-messages__one-section"}
-          %a{href: "#"}
-            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ２
-            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうもどうも
-        %li{class: "chat-side__groups-and-latest-messages__one-section"}
-          %a{href: "#"}
-            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} ぐるーぷ３
-            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"} どうもどうもどうも
+          = link_to groups_messages_path(id: group.id) do
+            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} #{group.name}
+            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"}# 最新のメッセージを表示
 
     .chat-main
       .chat-main__chat-header
         .chat-main__chat-header__group-info
-          %p{class: "chat-main__chat-header__group-info__current-group"}Sampleグループ
-          %p{class: "chat-main__chat-header__group-info__current-group-members"}Members:yusoshi
+          %p{class: "chat-main__chat-header__group-info__current-group"}= @group.name
+          %p{class: "chat-main__chat-header__group-info__current-group-members"}Members: #グループ所属メンバーを表示
         %a{href: "#", class: "chat-main__chat-header__edit-btn btn"}Edit
       .chat-main__messages-area
         %ul{class: "chat-main__messages-area__message-section"}

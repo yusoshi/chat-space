@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(create_params)
     if @group.save
-      redirect_to groups_messages_path
+      redirect_to groups_messages_path id: @group.id
     else
       flash.now[:alert] = "グループが保存できませんでした。"
       render action: :new
@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
 
   def messages
     @user = current_user
+    @group = Group.find(params[:id])
   end
 
   private
