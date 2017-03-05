@@ -20,7 +20,7 @@
         .chat-main__chat-header__group-info
           %p{class: "chat-main__chat-header__group-info__current-group"}= @group.name
           %p{class: "chat-main__chat-header__group-info__current-group-members"}Members: #グループ所属メンバーを表示
-        %a{href: "#", class: "chat-main__chat-header__edit-btn btn"}Edit
+        = link_to 'Edit', edit_group_path(id: @group.id), class: 'chat-main__chat-header__edit-btn btn'
       .chat-main__messages-area
         %ul{class: "chat-main__messages-area__message-section"}
           %li{class: "chat-main__messages-area__message-section__message-list"}
