@@ -14,12 +14,26 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    @group = Group.find(params[:id])
+    
+    if @group.update(create_params)
+      redirect_to groups_messages_path id: @group.id
+    else
+      flash.now[:alert] = "グループ情報を更新できませんでした。"
+      render action: :edit
+    end
   end
 
   def messages
     @user = current_user
     @group = Group.find(params[:id])
   end
+
+
 
   private
 
