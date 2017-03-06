@@ -32,8 +32,6 @@ before_action :get_group, only: [:edit, :update]
     @group = Group.find(params[:id])
   end
 
-
-
   private
 
   def create_params
