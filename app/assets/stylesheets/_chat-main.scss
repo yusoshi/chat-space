@@ -1,5 +1,9 @@
 @import "./var";
 
+li {
+  list-style: none;
+}
+
  .chat-main {
     float: left;
     width: calc(100% - 300px);

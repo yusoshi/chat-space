@@ -9,11 +9,7 @@
           = link_to edit_user_registration_path, class: "chat-side__current-user-name__icons__icon" do
             #{fa_icon  "cog"}
       %ul{class: "chat-side__groups-and-latest-messages"}
-      = @groups.each do |group|
-        %li{class: "chat-side__groups-and-latest-messages__one-section"}
-          = link_to groups_messages_path(id: group.id) do
-            %p{class: "chat-side__groups-and-latest-messages__one-section__group-name"} #{group.name}
-            %p{class: "chat-side__groups-and-latest-messages__one-section__latest-message"}# 最新のメッセージを表示
+      = render @groups
 
     .chat-main
       .chat-main__chat-header
