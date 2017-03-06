@@ -8,7 +8,7 @@ before_action :get_group, only: [:edit, :update]
   def create
     @group = Group.new(create_params)
     if @group.save
-      redirect_to groups_messages_path id: @group.id
+      redirect_to @group
     else
       flash.now[:alert] = "グループが保存できませんでした。"
       render action: :new
@@ -20,14 +20,14 @@ before_action :get_group, only: [:edit, :update]
 
   def update
     if @group.update(create_params)
-      redirect_to groups_messages_path id: @group.id
+      redirect_to @group
     else
       flash.now[:alert] = "グループ情報を更新できませんでした。"
       render action: :edit
     end
   end
 
-  def messages
+  def show
     @groups = Group.includes(:users).where(groups_users: {user_id: current_user.id})
     @group = Group.find(params[:id])
   end
