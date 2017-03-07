@@ -27,11 +27,6 @@ before_action :get_group, only: [:edit, :update]
     end
   end
 
-  def show
-    @groups = Group.includes(:users).where(groups_users: {user_id: current_user.id})
-    @group = Group.find(params[:id])
-  end
-
   private
 
   def create_params
