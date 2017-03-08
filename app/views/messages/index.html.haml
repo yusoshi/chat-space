@@ -19,25 +19,11 @@
         = link_to 'Edit', edit_group_path(@group), class: 'chat-main__chat-header__edit-btn btn'
       .chat-main__messages-area
         %ul{class: "chat-main__messages-area__message-section"}
-          %li{class: "chat-main__messages-area__message-section__message-list"}
-            .chat-main__messages-area__message-section__message-list__head
-              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
-              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
-            %p{class: "chat-main__messages-area__message-list__message"}test
-          %li{class: "chat-main__messages-area__message-section__message-list"}
-            .chat-main__messages-area__message-section__message-list__head
-              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
-              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
-            %p{class: "chat-main__messages-area__message-list__message"}test
-          %li{class: "chat-main__messages-area__message-section__message-list"}
-            .chat-main__messages-area__message-section__message-list__head
-              %p{class: "chat-main__messages-area__message-section__message-list__head__name"}yusoshi
-              %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}2017/02/11
-            %p{class: "chat-main__messages-area__message-list__message"}test
+        = render @messages
 
       .chat-main__footer
         .chat-main__footer--clearfix
-          %form{class: "chat-main__footer__form"}
-            %textarea{class: "chat-main__footer__form__textarea", placeholder: "type a message", row: "1",}
+          = form_for [@group, @message] do |f|
+            = f.text_field :body, placeholder: "type a message", row: "1", class: "chat-main__footer__form__textarea"
             #{fa_icon "image"}
-            %input{class: "chat-main__footer__form__sending-btn btn", type: "submit", value: "Send"}
+            = f.submit "Send", class: "chat-main__footer__form__sending-btn btn"
