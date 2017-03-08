@@ -1,0 +1,5 @@
+%li{class: "chat-main__messages-area__message-section__message-list"}
+  .chat-main__messages-area__message-section__message-list__head
+    %p{class: "chat-main__messages-area__message-section__message-list__head__name"}= message.user.name
+    %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}= message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+  %p{class: "chat-main__messages-area__message-list__message"}= message.body

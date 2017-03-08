@@ -25,7 +25,7 @@
 ### messages table
 |columns|type|option|index|
 |:-:|:-:|:-:|:-:|
-|body|text|-|-|
+|body|text|NOT NULL|-|
 |images|string|-|-|
 |group_id|references|外部キー制約|◯|
 |user_id|references|外部キー制約|◯|
