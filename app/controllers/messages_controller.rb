@@ -13,6 +13,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path(@group)
     else
+      @groups = current_user.groups.includes(:users)
+      @messages = Message.where(group_id: params[:group_id]).order('created_at ASC').includes(:user)
       flash.now[:alert] = "メッセージが送信できませんでした。"
       render action: :index
     end
