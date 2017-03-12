@@ -9,7 +9,9 @@ describe Message do
     end
 
     it "is valid with a body" do
-      message = build(:message)
+      user = create(:user)
+      group = create(:group)
+      message = build(:message, user_id: user, group_id: group)
       expect(message).to be_valid
     end
   end
