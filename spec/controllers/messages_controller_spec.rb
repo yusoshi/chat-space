@@ -17,6 +17,9 @@ describe MessagesController, type: :controller do
     end
 
     it "renders the :index template" do
+      group = create(:group)
+      get :index, params: { group_id: group.id }
+      expect(response).to render_template :index
     end
   end
 end
