@@ -59,6 +59,8 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'haml'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
 
 
 
