@@ -4,14 +4,17 @@ class MessagesController < ApplicationController
   def index
     @groups = current_user.groups.includes(:users)
     @message = Message.new
-    @messages = Message.where(group_id: params[:group_id]).order(created_at: :ASC).includes(:user)
+    @messages = Message.where(group_id: params[:group_id]).order(created_at: :DESC).includes(:user)
     @users = @group.users
   end
 
   def create
     @message = Message.new(create_params)
     if @message.save
-      redirect_to group_messages_path(@group)
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group) }
+        format.json { render json: @message }
+      end
     else
       @groups = current_user.groups.includes(:users)
       @messages = Message.where(group_id: params[:group_id]).order(created_at: :ASC).includes(:user)
