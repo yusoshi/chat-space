@@ -93,6 +93,16 @@ li {
         line-height: 20px;
         box-sizing: border-box;
         }
+        &__image-uploader {
+          height: 0;
+          background-color: black;
+        }
+        &__image-uploader > input {
+          display: none;
+        }
+        &__image-uploader > label {
+          cursor: pointer;
+        }
         &__sending-btn {
           float: left;
           background-color: $message_background_color;
