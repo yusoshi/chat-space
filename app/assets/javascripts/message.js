@@ -16,8 +16,9 @@ $(function() {
     var message_info = list.append('<div class="chat-main__messages-area__message-section__message-list__head">' + userNameHTML + messageTimeHTML + '</div>');
 
     // 画像がある場合とない場合で場合分け
-    if (message.image) {
+    if (message.image.url) {
       list.append('<p class="chat-main__messages-area__message-list__message">' + "<img src=" + message.image.thumb.url + ">" + "</p>");
+      list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
     } else {
       list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
 

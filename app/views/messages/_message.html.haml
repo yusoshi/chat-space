@@ -5,6 +5,7 @@
   -if message.image.present?
     %p{class: "chat-main__messages-area__message-list__message"}
       = image_tag message.image.thumb.url
+    %p{class: "chat-main__messages-area__message-list__message"}= message.body
   -else
     %p{class: "chat-main__messages-area__message-list__message"}= message.body
 
