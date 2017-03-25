@@ -11,9 +11,17 @@ $(function() {
 
     var messageTimeHTML = '<p class="chat-main__messages-area__message-section__message-list__head__post-date">' + messageTime3 + "</p>";
 
+
     // メッセージ情報のHTML整形
     var message_info = list.append('<div class="chat-main__messages-area__message-section__message-list__head">' + userNameHTML + messageTimeHTML + '</div>');
-    var body = list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+
+    // 画像がある場合とない場合で場合分け
+    if (message.image) {
+      list.append('<p class="chat-main__messages-area__message-list__message">' + "<img src=" + message.image.thumb.url + ">" + "</p>");
+    } else {
+      list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+
+  }
 
     return list
   }
@@ -22,19 +30,18 @@ $(function() {
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.chat-main__footer__form__textarea');
-    var message = textField.val();
+    var formData = new FormData($('form#new_message').get(0));
 
     // 現在のURLを取得
     var current_url = location.href;
 
     $.ajax({
       type: 'POST',
-      url: current_url + '.json',
-      data: {
-        message: {
-          body: message
-        }
-      },
+      url: current_url + ".json",
+      data: formData,
+      processData: false,
+      contentType: false,
+      async: true,
       dataType: 'json'
     })
     .done(function(data) {
