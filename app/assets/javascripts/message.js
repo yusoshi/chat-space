@@ -1,10 +1,13 @@
 $(function() {
+  // メッセージ情報をHTMLで組み立てる
   function buildHTML(message) {
     var list = $('<li class="chat-main__messages-area__message-section__message-list">');
-    // ユーザーネームの取得とHTMLと挿入
+
+    // ユーザーネームの取得
     var userName = $('.chat-main__footer__form___current-user-name').val();
     var userNameHTML = '<p class="chat-main__messages-area__message-section__message-list__head__name">' + userName + '</p>';
-    // 投稿日時の取得とHTML挿入
+
+    // 投稿日時の取得
     var messageTime1 = message.created_at.replace(/-/g, '/');
     var messageTime2 = messageTime1.replace('T', ' ');
     var messageTime3 = messageTime2.replace(/.\d\d\d.$/, '');
@@ -21,9 +24,7 @@ $(function() {
       list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
     } else {
       list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
-
   }
-
     return list
   }
 
@@ -45,13 +46,15 @@ $(function() {
       async: true,
       dataType: 'json'
     })
+    // 成功した場合、メッセージ情報を表示
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-main__messages-area__message-section').append(html);
       textField.val('');
     })
+    // 失敗した場合、エラーメッセージを表示
     .fail(function() {
-      alert('error');
+      alert('送信に失敗しました。');
     });
   });
 });
