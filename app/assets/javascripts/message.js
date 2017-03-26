@@ -40,8 +40,7 @@ $(function() {
       url: current_url + ".json",
       data: formData,
       processData: false,
-      contentType: false,
-      dataType: 'json'
+      contentType: false
     })
     // 成功した場合、メッセージ情報を表示
     .done(function(data) {
