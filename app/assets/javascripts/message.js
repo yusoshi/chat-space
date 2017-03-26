@@ -22,7 +22,7 @@ $(function() {
     if (message.image.url) {
       list.append('<p class="chat-main__messages-area__message-list__message">' + "<img src=" + message.image.thumb.url + ">" + "</p>");
     }
-      list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+    list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
     return list
   }
 
