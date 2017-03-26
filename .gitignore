@@ -12,4 +12,9 @@
 !/log/.keep
 /tmp
 
+
 public/uploads/
+
+# 環境変数を設定するファイルは無視
+.env
+
