@@ -1,4 +1,10 @@
 $(function() {
+
+  // メッセージの本文をしかるべき場所に挿入
+  function messageBodyHTML(list, message) {
+    list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+  }
+
   // メッセージ情報をHTMLで組み立てる
   function buildHTML(message) {
     var list = $('<li class="chat-main__messages-area__message-section__message-list">');
@@ -21,9 +27,9 @@ $(function() {
     // 画像がある場合とない場合で場合分け
     if (message.image.url) {
       list.append('<p class="chat-main__messages-area__message-list__message">' + "<img src=" + message.image.thumb.url + ">" + "</p>");
-      list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+      messageBodyHTML(list, message);
     } else {
-      list.append('<p class="chat-main__messages-area__message-list__message">' + message.body + '</p>');
+      messageBodyHTML(list, message);
   }
     return list
   }
