@@ -2,10 +2,10 @@
   .chat-main__messages-area__message-section__message-list__head
     %p{class: "chat-main__messages-area__message-section__message-list__head__name"}= message.user.name
     %p{class: "chat-main__messages-area__message-section__message-list__head__post-date"}= message.created_at.strftime("%Y/%m/%d %H:%M:%S")
+  %p{class: "chat-main__messages-area__message-list__message"}= message.body
   -if message.image.present?
     .chat-main__messages-area__message-list__message
       = image_tag message.image.thumb.url
-    %p{class: "chat-main__messages-area__message-list__message"}= message.body
-  -else
-    %p{class: "chat-main__messages-area__message-list__message"}= message.body
+
+
 
