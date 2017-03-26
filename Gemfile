@@ -71,5 +71,8 @@ gem 'rmagick'
 # 環境変数保護
 gem 'dotenv-rails'
 
+# クラウドサービスを利用しやすく
+gem 'fog', require: 'fog/aws'
+
 
 
