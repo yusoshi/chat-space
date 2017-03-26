@@ -23,12 +23,12 @@
 
       .chat-main__footer
         .chat-main__footer--clearfix
-          = form_for [@group, @message], name: "chat-main__footer__form" do |f|
+          = form_for [@group, @message] do |f|
             %input{name: "current_user_name", type: "hidden", value: current_user.name, class: "chat-main__footer__form___current-user-name"}
             = f.text_field :body, placeholder: "type a message", row: "1", class: "chat-main__footer__form__textarea"
             .chat-main__footer__form__image-uploader
               = f.label :image, class: "chat-main__footer__form__image-uploader__label" do
-                #{fa_icon "image", class: "chat-main__footer__form__image-uploader__label__iamge-icon"}
+                = fa_icon "image", class: "chat-main__footer__form__image-uploader__label__iamge-icon"
               = f.file_field :image, class: "chat-main__footer__form__image-uploader__file-field"
 
             = f.submit "Send", class: "chat-main__footer__form__sending-btn btn"
