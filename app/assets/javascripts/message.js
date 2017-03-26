@@ -49,7 +49,6 @@ $(function() {
       data: formData,
       processData: false,
       contentType: false,
-      async: true,
       dataType: 'json'
     })
     // 成功した場合、メッセージ情報を表示
