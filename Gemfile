@@ -53,14 +53,23 @@ end
 group :test do
 end
 
-
+# アイコン
 gem 'font-awesome-rails'
+
+# haml関連
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'haml'
+
+# ユーザー認証
 gem 'devise'
+
+# 画像アップロード
 gem 'carrierwave'
 gem 'rmagick'
+
+# 環境変数保護
+gem 'dotenv-rails'
 
 
 
