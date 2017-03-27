@@ -7,6 +7,7 @@ when 'production'
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       region: 'ap-northeast-1'
     }
+  config.storage = :fog
   config.fog_directory = 'chat-space-bucket-for-prod'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-bucket-for-prod'
   end
@@ -19,6 +20,7 @@ when 'development'
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       region: 'ap-northeast-1'
     }
+    config.storage = :fog
     config.fog_directory = 'chat-space-bucket-for-dev'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-bucket-for-dev'
   end
