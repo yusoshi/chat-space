@@ -72,7 +72,7 @@ gem 'rmagick'
 gem 'dotenv-rails'
 
 # クラウドサービスを利用しやすく
-gem 'fog', require: 'fog/aws'
+gem 'fog'
 
 
 
