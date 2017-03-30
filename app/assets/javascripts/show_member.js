@@ -1,6 +1,7 @@
 $(function() {
   // チェックされたユーザーをページ上に表示
-  $('.chat-group-form__field--right input').change(function() {
+  $('.chat-group-form__field--right input').change(function(e) {
+    e.preventDefault();
     if ($(this).prop('checked')) {
       var userId = $(this).val();
       var forSelectingLabel = 'group_user_ids_' + userId;
