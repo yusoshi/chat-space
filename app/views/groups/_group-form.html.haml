@@ -10,7 +10,7 @@
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
         = f.collection_check_boxes :user_ids, User.all, :id, :name, class: "chat-group-form__input", id: "user-search-field" do |b|
-          = b.label(class: 'chat-group-form__input__label' + ) {b.check_box + b.text}
+          = b.label {b.check_box + b.text}
       #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
