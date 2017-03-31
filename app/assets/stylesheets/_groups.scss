@@ -53,6 +53,16 @@
     &--right {
       float: right;
       width: 70%;
+      &__user-search-result {
+        &__list {
+          padding: 10px 0 10px 0;
+          border-bottom: 1px solid #eee;
+        }
+        &__add-btn {
+          float: right;
+          color: #38aef0;
+        }
+      }
     }
 
     .chat-group-form__label {
