@@ -8,7 +8,10 @@ before_action :get_group, only: [:edit, :update]
   def create
     @group = Group.new(create_params)
     if @group.save
-        redirect_to group_messages_path(@group), notice: "グループを作成しました。"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "グループを作成しました。" }
+        format.json { render json: @group }
+      end
     else
       flash.now[:alert] = "グループが保存できませんでした。"
       render action: :new

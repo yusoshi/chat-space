@@ -58,11 +58,35 @@ $(function() {
     // var ul = $('.chat-group-user__name');
     // var li = $('<li class="chat-group-user__name__names">');
 
-    $('.chat-group-user__name').append('<li class="chat-group-user__name__names">' + userName);
+    $('.chat-group-user__name').append('<li class="chat-group-user__name__names" user_id=' + userId + '>' + userName);
   });
 
+  // Saveボタンを押すと非同期通信でグループ情報を送信
+  $('#new_group').on('submit', function(e) {
+    e.preventDefault();
+    var currentUrl = location.href;
 
+    var user_ids = [];
+    $('.chat-group-user__name__names').each(function() {
+      user_ids.push($(this).attr('user_id'))
+    });
+    var name = $('#chat_group_name').val();
 
-
-
+    $.ajax({
+      type: 'POST',
+      url: '/groups.json',
+      data: {
+        group: {
+          name: name,
+          user_ids: user_ids
+        }
+      }
+    })
+    .done(function(data) {
+      window.location.href = "/groups/" + data.id + "/messages";
+    })
+    .fail(function() {
+      alert('送信に失敗しました。')
+    })
+  });
 });
