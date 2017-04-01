@@ -55,12 +55,19 @@
       width: 70%;
       &__user-search-result {
         &__list {
-          padding: 10px 0 10px 0;
+          padding: 0 15px;
+          line-height: 50px;
           border-bottom: 1px solid #eee;
+          &__name {
+            float: left;
+          }
         }
         &__add-btn {
           float: right;
           color: #38aef0;
+        }
+        &__add-btn:hover {
+          cursor: pointer;
         }
       }
     }

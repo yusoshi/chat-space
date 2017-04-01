@@ -28,18 +28,14 @@ before_action :get_group, only: [:edit, :update]
   end
 
   def search
-    raise unless params[:q]
     lists = []
     results = User.where('name LIKE(?)', "%#{ params[:q] }%")
 
     results.each do |result|
-      lists << result.name if result.name
+      lists << { name: result.name, id: result.id}  if result.name && result.id
     end
 
     render json: { lists: lists }
-
-    rescue
-      render json: { result: "error_search"}, status: 400
   end
 
   private

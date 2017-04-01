@@ -9,8 +9,8 @@
       = f.label :チャットメンバーを追加, class: "chat-group-form__label"
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        = f.text_field :id, id: "chat-group-form__input__user", class: "chat-group-form__input", placeholder: "メンバーを入力してください"
-      %ul{class: "chat-group-form__field--right__user-search-result .clearfix"}
+        %input{id: "chat-group-form__input__user", class: "chat-group-form__input", placeholder: "メンバーを入力してください"}
+      %ul{class: "chat-group-form__field--right__user-search-result clearfix"}
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
@@ -18,7 +18,7 @@
       #chat-group-users
         #chat-group-user-22.chat-group-user.clearfix
           %input{:name => "group[user_ids][]", :type => "hidden", :value => current_user.id}/
-          %ul.chat-group-user__names
+          %ul.chat-group-user__name
             %li.chat-group-user__name__names #{current_user.name}
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
