@@ -16,10 +16,9 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       #chat-group-users
-        #chat-group-user-22.chat-group-user.clearfix
+        %ul#chat-group-user-22.chat-group-user.clearfix
           %input{:name => "group[user_ids][]", :type => "hidden", :value => current_user.id}/
-          %ul.chat-group-user__name
-            %li{ class: "chat-group-user__name__names", user_id: current_user.id }  #{ current_user.name }
+          %li{ class: "chat-group-user__name clearfix", user_id: current_user.id }  #{ current_user.name }
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
