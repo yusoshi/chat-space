@@ -38,17 +38,6 @@ before_action :get_group, only: [:edit, :update]
     end
   end
 
-  def search
-    lists = []
-    results = User.where('name LIKE(?)', "%#{ params[:q] }%")
-
-    results.each do |result|
-      lists << { name: result.name, id: result.id}  if result.name && result.id
-    end
-
-    render json: { lists: lists }
-  end
-
   private
 
   def create_params

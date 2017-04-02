@@ -23,7 +23,7 @@ $(function() {
       // ajax処理
       $.ajax({
         type: 'GET',
-        url: '/groups/search',
+        url: '/users/search',
         data: {
           q: query
         }
