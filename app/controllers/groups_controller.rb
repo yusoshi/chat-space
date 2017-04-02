@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
 before_action :get_group, only: [:edit, :update]
 
+  def index
+    @groups = current_user.groups.includes(:users)
+  end
+
   def new
    @group = Group.new
   end
