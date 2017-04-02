@@ -6,11 +6,7 @@ class Group < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   def latest_message
-    if self.messages.order('created_at DESC').first
-      latest_message = self.messages.order('created_at DESC').first.body
-    else
-      latest_message = "まだメッセージはありません。"
-    end
+    latest_message = self.messages.order('created_at DESC').first ? self.messages.order('created_at DESC').first.body : "まだメッセージはありません。"
     return latest_message
   end
 end
