@@ -7,7 +7,7 @@ $(function() {
         div.append(
           `<div class="chat-group-user chat-group-user-search clearfix">
             <p class="chat-group-user__name">${list.name}</p>
-            <a class="chat-group-user__btn chat-group-user__btn--add" user_id=${list.id} user_name=${list.name} >追加</a>`);
+            <a class="chat-group-user__btn chat-group-user__btn--add" data-user-id=${list.id} data-user-name=${list.name} >追加</a>`);
     });
   }
 
@@ -40,15 +40,15 @@ $(function() {
   // 追加ボタンを押すと追加予定メンバーとして表示される
   $(document).on('click', '.chat-group-user__btn--add', function(e) {
     e.preventDefault();
-    var userId = $(this).attr('user_id');
-    var userName = $(this).attr('user_name');
+    var userId = $(this).attr('data-user-id');
+    var userName = $(this).attr('data-user-name');
 
     var div = $('#chat-group-users');
     div.append(`
       <div class="chat-group-user clearfix">
         <input type="hidden" name="group[users_id][]" id="chat-group-user-${userId}" value=${userId}
         <p class="chat-group-user__name">${userName}
-        <a class="chat-group-user__btn chat-group-user__btn--remove" user_id=${userId} user_name=${userName}>削除</a>`);
+        <a class="chat-group-user__btn chat-group-user__btn--remove" data-user-id=${userId} data-user-name=${userName}>削除</a>`);
     $(this).parent().remove();
   });
 
