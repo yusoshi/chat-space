@@ -1,6 +1,11 @@
 a {
   text-decoration: none;
 }
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .chat {
   min-width: 980px;
   height: 100vh;

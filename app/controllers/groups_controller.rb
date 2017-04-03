@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
 before_action :get_group, only: [:edit, :update]
 
+  def index
+    @groups = current_user.groups.includes(:users)
+  end
+
   def new
    @group = Group.new
   end
@@ -8,7 +12,10 @@ before_action :get_group, only: [:edit, :update]
   def create
     @group = Group.new(create_params)
     if @group.save
-        redirect_to group_messages_path(@group), notice: "グループを作成しました。"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "グループを作成しました。" }
+        format.json { render json: @group, notice: "グループを作成しました。"  }
+      end
     else
       flash.now[:alert] = "グループが保存できませんでした。"
       render action: :new
@@ -16,11 +23,15 @@ before_action :get_group, only: [:edit, :update]
   end
 
   def edit
+    @users = @group.users
   end
 
   def update
     if @group.update(create_params)
-      redirect_to group_messages_path(@group), notice: "グループを更新しました。"
+      respond_to do |format|
+        format.html { redirect_to group_messages_path(@group), notice: "グループを更新しました。"}
+        format.json { render json: @group, notice: "グループを更新しました。"}
+      end
     else
       flash.now[:alert] = "グループ情報を更新できませんでした。"
       render action: :edit
