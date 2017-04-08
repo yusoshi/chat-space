@@ -52,6 +52,10 @@ end
 group :test do
 end
 
+group :production do
+  gem 'unicorn'
+end
+
 # アイコン
 gem 'font-awesome-rails'
 
