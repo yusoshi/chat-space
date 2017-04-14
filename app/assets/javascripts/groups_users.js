@@ -3,11 +3,9 @@ $(function() {
   // ユーザーの検索結果と「追加」ボタンを表示
   function userList(lists) {
     $(lists).each(function(i, list) {
-      var div = $(`.chat-group-form__field--right__user-search-result`);
+      var div = $('.chat-group-form__field--right__user-search-result');
         div.append(
-          `<div class="chat-group-user chat-group-user-search clearfix">
-            <p class="chat-group-user__name">${list.name}</p>
-            <a class="chat-group-user__btn chat-group-user__btn--add" data-user-id=${list.id} data-user-name=${list.name} >追加</a>`);
+          '<div class="chat-group-user chat-group-user-search clearfix">' + '<p class="chat-group-user__name">' + list.name + '</p>' + '<a class="chat-group-user__btn chat-group-user__btn--add" data-user-id=' + list.id + ' data-user-name=' + list.name + '>追加</a>');
     });
   }
 
@@ -44,11 +42,10 @@ $(function() {
     var userName = $(this).attr('data-user-name');
 
     var div = $('#chat-group-users');
-    div.append(`
-      <div class="chat-group-user clearfix">
-        <input type="hidden" name="group[users_id][]" id="chat-group-user-${userId}" value=${userId}
-        <p class="chat-group-user__name">${userName}
-        <a class="chat-group-user__btn chat-group-user__btn--remove" data-user-id=${userId} data-user-name=${userName}>削除</a>`);
+    div.append('<div class="chat-group-user clearfix">' +
+      '<input type="hidden" name="group[users_id][]" id="chat-group-user-' + userId + '"' +' value="' + userId + '">' +
+      '<p class="chat-group-user__name">' + userName + '</p>' +
+      '<a class="chat-group-user__btn chat-group-user__btn--remove" data-user-id=' + userId + ' data-user-name=' + userName + '>削除</a>');
     $(this).parent().remove();
   });
 
