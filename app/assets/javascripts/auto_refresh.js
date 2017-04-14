@@ -1,1 +1,3 @@
-setTimeout("location.reload()",1000*10);
+$(function() {
+  setTimeout("location.reload()", 1000*10);
+);
