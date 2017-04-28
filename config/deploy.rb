@@ -15,7 +15,7 @@ set :ssh_options, auth_methods: ['publickey'],
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "~/.rbenv/shims:~/.rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_ACCESS_KEY_ID: "AWS_ACCESS_KEY_ID",
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
 
