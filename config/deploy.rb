@@ -24,8 +24,8 @@ namespace :deploy do
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/anaconda/bin:/Users/nishiyamagenki/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
 }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :sidekiq_queue, :carrierwave
