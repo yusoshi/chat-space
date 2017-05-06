@@ -91,7 +91,7 @@ $(function() {
     var name = $('#chat_group_name').val();
 
     var currentUrl = location.href;
-    var groupId = currentUrl.match(/\/(\d\d)\//)[1];
+    var groupId = currentUrl.match(/\/(\d+)\//)[1];
 
     $.ajax({
       type: 'PATCH',
